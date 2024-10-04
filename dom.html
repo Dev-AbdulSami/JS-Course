@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .bg-black {
+
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Learning <span style="display: none;">Hello world</span> </h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+        </ul>
+    </div>
+
+
+    <script>
+        document.getElementById()
+        document.getElementById('title')
+        document.getElementById('title').id
+        document.getElementById('title').class
+        document.getElementById('title').className
+        document.getElementById('title').getAttribute
+        document.getElementById('title').getAttribute()
+        document.getElementById('title').getAttribute('id')
+        document.getElementById('title').setAttribute()
+        document.getElementById('title').setAttribute('class', 'test') // setAttribute always override krta he
+        document.getElementById('title').setAttribute('class', 'test heading')
+        const title = document.getElementById('title')
+        title.style.backgroundColor = 'green'
+        title.style.padding = "15px"
+        title.style.borderRadius = "15px"
+        title.textContent  // sb show krega chahe us ka display none ho
+        title.innerText // only wo text show krega jo browser pe display horha he
+        title.innerHTML // text k sath html bhi return krta he
+        document.querySelector('h1')
+        document.querySelector('#title')
+        document.querySelector('.heading')
+        document.querySelector('input[type="password"]')
+        document.querySelector("ul")
+        const myul = document.querySelector("ul")
+        const turnGreen = myul.querySelector("li")
+        turnGreen.style.backgroundColor = "green"
+        turnGreen.style.padding = "15px"
+        turnGreen.innerText = "five"
+        const tempList = document.querySelectorAll('li') // nodelist array nhi hota
+        tempList.style.color = "green"
+        tempList[0].style.color = "green"
+        const myH1 = document.querySelectorAll("h1")
+        myH1.style.color = "green"
+        myH1[0].style.color = "green"
+
+        const tempList = document.querySelectorAll("li")
+
+        List.forEach(function (li) {
+
+            li.style.color = "green"
+        })
+
+        const tempClassList = document.getElementsByClassName("list-item") // they return HTMLcollection
+        Array.from("list-item") // convert into an array
+        const convertArray = Array.from(tempClassList)
+        convertArray.forEach(function (li) {
+
+            li.style.color = "red"
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

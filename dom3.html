@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;color: white;">
+    
+</body>
+<!-- The basic difference between a NodeList  and  a HTMLCollection is that nodelist is collection of all texts, html-elements and comments  whereas HTMLcollection is collection of all html-elements only. -->
+<script>
+    const div = document.createElement("div")
+    console.log(div);
+    div.className = "main"
+    // div.id = "myId"
+    div.id = Math.floor(Math.random() * 10 + 1)
+    div.setAttribute("title","Generated Title")
+    div.style.backgroundColor = "green"
+    div.style.padding = "12px"
+    // div.innerText = "Practice Time"
+    const addText = document.createTextNode("Practice Time")
+    div.appendChild(addText)
+    
+    document.body.append(div)
+</script>
+</html>

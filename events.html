@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List with Pexels Images</title>
+</head>
+
+<body>
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <!-- First way of using event -->
+        <!-- <li><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onclick="alert('Clicked')" id="one" alt="Beach" width="150" height="100"></li> -->
+
+        <!-- second way -->
+        <!-- <li><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" onclick="test()" id="one" alt="Beach" width="150" height="100"></li> -->
+
+
+        <li><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                id="one" alt="Beach" width="150" height="100"></li>
+        <li><img src="https://images.pexels.com/photos/34950/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                id="two" alt="Forest" width="150" height="100"></li>
+        <li><img src="https://images.pexels.com/photos/1166869/pexels-photo-1166869.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                id="three" alt="Mountains" width="150" height="100"></li>
+        <li><a href="https://www.google.com" id="google">Google</a></li>
+    </ul>
+</body>
+
+<script>
+    // function test(){
+
+    //     alert("Clicked")
+    // }
+
+    // Third way
+    // document.getElementById('one').onclick = function(){
+
+    //     alert("Clicked")
+    // }
+
+    // Best way
+
+    // document.getElementById('one').addEventListener("click",function(){
+
+    //     alert("Clicked")
+    // })
+
+    // document.getElementById('one').addEventListener("click", function (e) {
+
+    //     console.log(e)
+
+    // },false)
+
+    // event propagation:
+    // Event Bubbling: Down to up kam krta he. Means first show inner value then outer (false)
+    //  Event Capturing: Up to down kam krta he. Means pehle outer phr inner (true)
+
+
+    // Event Bubbling
+    // document.getElementById('images').addEventListener("click",function (e) {
+
+    //     console.log("Clicked inside the ul");
+
+    // },false)
+
+    // document.getElementById('one').addEventListener("click",function (e) {
+
+    //     console.log("Image cliced");
+
+    // },false)
+
+    // Stop Bubbling
+
+    // document.getElementById('images').addEventListener("click",function (e) {
+
+    //     console.log("Clicked inside the ul");
+
+    // },false)
+
+    // document.getElementById('one').addEventListener("click",function (e) {
+
+    //     console.log("Image cliced");
+    //     e.stopPropagation()
+
+    // },false)
+
+    // Event Capturing
+
+    // document.getElementById('images').addEventListener("click",function (e) {
+
+    //     console.log("Clicked inside the ul");
+
+    // },true)
+
+    // document.getElementById('one').addEventListener("click",function (e) {
+
+    //     console.log("Image cliced");
+
+    // },true)
+
+    // preventDefult
+    // Default behaviour ko stop krne k lie use hota he
+
+    //  document.getElementById("google").addEventListener('click',function(e){
+
+    //     console.log("Google clicked");
+    //     e.preventDefault()
+
+    //  })
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+        // console.log(e.target);  
+        // console.log(e.target.parentNode);  
+
+        // let removeIt = e.target.parentNode
+        // removeIt.remove()
+
+        console.log(e.target.tagName);
+
+        if (e.target.tagName == "IMG") {
+
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+
+
+    })
+
+</script>
+
+</html>
